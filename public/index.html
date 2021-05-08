@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>sheeeee 3d</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="gl-matrix-min.js" defer></script>
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+        <h1>yoooo Sheeee</h1>
+        <canvas id="display"></canvas>
+        <script>
+            const display = document.getElementById("display");
+            resize(document.documentElement.clientWidth - 50, document.documentElement.clientHeight - 50, 1);
+            function resize(width, height, height_width_ratio) {
+                if (height / width > height_width_ratio) {
+                    display.height = width * height_width_ratio;
+                    display.width = width;
+                } else {
+                    display.height = height;
+                    display.width = height / height_width_ratio;
+                }
+
+                imageSmoothingEnabled = false;
+            }
+
+            window.addEventListener("resize", () => {
+                resize(document.documentElement.clientWidth - 50, document.documentElement.clientHeight - 50, 1);
+            });
+        </script>
+    </body>
+</html>
